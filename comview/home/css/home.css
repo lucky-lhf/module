@@ -1,0 +1,122 @@
+body,html {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	font-size: 12px;
+}
+/*设置所有的都是以边框开始计算宽度*/
+*,::before,::after {
+	Box-sizing: border-box;
+}
+a:hover{
+	text-decoration: none;
+}
+.clearfix:after{ display: block; clear: both; content: ""; visibility: hidden; height: 0; }
+.clearfix{ zoom:1; }
+
+/****************头部****************/
+.mui-bar-nav.m-nav{
+	background: #fff;
+	color: #4292D7;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.m-nav.mui-bar .mui-icon{
+	font-size: 25px;
+}
+.mui-bar-nav.m-nav .mui-title{
+	font-size: 16px;
+	right: 30px;
+	left: 0;
+}
+/****************主内容****************/
+/* 轮播图 */
+.mui-content.m-con{
+	background: #fff;
+	/*padding-bottom: 42px;*/
+}
+.m-con .mui-slider-indicator{
+	bottom: 5px;
+}
+.mui-slider-indicator .mui-indicator{
+	background: rgba(255,255,255,.7);
+}
+/* 滚动样式 */
+.repairList{
+    height: 100%;
+    position: relative;
+    width: 100%;
+    margin-top: 45px;
+}
+/* 前端模块 开始 */
+.m-container .mui-table-view-cell{
+	padding: 0;
+}
+.gongge-list .mui-slider{
+	margin-top: -11px;
+}
+.gongge-list .mui-table-view-cell{
+	padding: 15px 25px;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-tap-highlight-color:rgba(0,0,0,0.1);
+}
+.gongge-list .mui-table-view:after{
+	background: none;
+}
+.gongge-list .mui-grid-view.mui-grid-9{
+	padding: 0;
+	background: #fff;
+	border: none;
+	margin-top: -11px;
+}
+.gongge-list .mui-slider-group:after{
+	position: absolute;
+	right: 25px;
+	bottom: 0;
+	left: 25px;
+	height: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.gongge-list .mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	border: none;
+	padding:10px 15px;
+	margin-top: -11px;
+}
+.gongge-list .mui-grid-view.mui-grid-9 .mui-table-view-cell a{
+	padding: 10px 0 5px 0;
+}
+.gongge-list .mui-grid-view.mui-grid-9 .mui-media .mui-icon{
+	background: #39ADFF;
+	color:#fff;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 28px;
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body.m-text{
+	font-size: 12px;
+	font-weight: normal;
+}
+/*去掉点击背景样式*/
+.m-con .mui-table-view-cell.mui-active,
+.m-con .mui-grid-view.mui-grid-9 .mui-table-view-cell.mui-active{
+	background: none;
+}
+
+/* 前端模块 结束 */
+
+
+
+
+
+
+
+
+
+
+

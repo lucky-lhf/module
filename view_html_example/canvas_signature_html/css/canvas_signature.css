@@ -1,0 +1,71 @@
+/*******电子签名 弹出框字体、样式*******/
+.alertBox .glo_title {
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	border-bottom: 1px solid #fff;
+	background-color: #007aff;
+	text-align: center;
+	border-radius: 6px 6px 0px 0px;
+}
+.alertBox .glo_content {
+	background: #007aff;
+	padding: 15px;
+	height: 172px;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.alertBox .glo_con {
+	margin-bottom: 10px;
+	min-height: 60px;
+	position: relative;
+}
+.alertBox .glo_con #alertMsg {
+	height: 120px;
+	font-size: 13px;
+	background: #fff;
+	margin-top: 10px;
+}
+.alertBox .list_wrap {
+	width: 100%;
+}
+.alertBox .glo_result.info_confirm {
+	background: #ccc;
+}
+.alertBox .glo_result {
+	width: 50%;
+	float: left;
+	background: #ed7a30;
+	color: #fff;
+	padding: 5px;
+	border-radius: 0px;
+	line-height: 40px;
+	text-align: center;
+	padding-left: 15px;
+	border-top: 1px solid rgb(200,200,200);
+}
+
+.alertBox .glo_result.info_confirm {
+	border-right: 1px solid #fff;
+}
+.alertBox label.title-title {
+	font-size: 14px;
+	color: #FFF;
+}
+.m-content .mui-button-row {
+	padding: 0;
+	margin: 10px 18px;
+}
+#imageData_show {
+	width: 270px;
+	height: 160px;
+	border: 1px solid #ed7a30;
+	background: #fff;
+	margin: 0 auto;
+}
+#alertMsg-box {
+	height: 264px;
+}

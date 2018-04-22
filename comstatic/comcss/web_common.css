@@ -1,0 +1,104 @@
+/**
+ * 代码在线美化链接地址：https://1024tools.com/highlight [=> github]
+ * 代码美化样式
+**/
+@import "../micss/highlight.github.css";
+body,html{
+	height: 100%;
+	width: 100%;
+	background: #fff;
+}
+.repairList{
+	margin-top: 44px;
+}
+/*设置所有的都是以边框开始计算宽度*/
+*,::before,::after {
+	Box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+}
+a:hover{
+	text-decoration: none;
+}
+/****************公共头部样式****************/
+.mui-bar.m-header{
+	background: #fff;
+}
+/***************公共主内容样式*************/
+.mui-content.m-content{
+	background: #fff;
+	margin-bottom: 44px;
+}
+.m-content .mui-content-padded p{
+	font-size: 22px;
+    font-weight: normal;
+    color: #000;
+    margin: 20px 8px 15px 8px;
+}
+.m-content .des{
+	padding: 0 10px 0 25px;
+}
+.m-content .des li{
+	margin-top: 10px;
+	font-size: 16px;
+    color: #8c8e91;
+}
+.m-content .des li .txt{
+	color: #8c8e91;
+	font-size: 15px;
+	margin: 0 0 0 -8px;
+	line-height: 160%;
+}
+.m-content .des li strong{
+	font-weight: normal;
+	color: #ed7a30;
+	font-size: 15px;
+	display: block;
+	margin-top: 5px;
+	line-height: 160%;	
+}
+.m-content .mui-content-padded .t3{
+	margin: 10px 35px 10px 35px;
+	font-size: 14px;
+	color: #8c8e91;
+}
+.m-content .hm-description{
+	margin: 0 30px 0 50px;
+	padding-bottom: 20px;
+}
+.m-content .hm-description li{
+	font-size: 14px;
+	color: #8c8e91;
+	padding: 5px 0;
+}
+.mui-content-padded.border{
+	position: relative;
+}
+.mui-content-padded.border .hm-description:after{
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+/*滚动盒子公共样式*/
+.repairList{
+    height: 100%;
+    position: relative;
+    width: 100%;
+    margin-top: 45px;
+}
+/*代码美化公共样式*/
+.code_pretty{
+	font-size: 12px;
+	margin: 10px 0 0 -15px;
+}
+.code_pretty code{
+	line-height: 150%;
+}

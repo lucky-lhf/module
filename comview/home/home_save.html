@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+	<!--允许全屏--> 
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--标准mui.css-->
+	<link rel="stylesheet" href="../../comstatic/micss/mui.min.css">
+	<!--阿里巴巴图标库-->
+	<link rel="stylesheet" href="../../comstatic/iconfont/iconfont.css"/>
+	<!--Home页的css-->
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<!-- header开始 -->
+	<header class="mui-bar mui-bar-nav m-nav">
+		<h1 class="mui-title">前端及安卓常用的功能模块封装</h1>
+		<a class="mui-icon mui-icon-bars mui-pull-right"></a>
+	</header>
+	<!-- header结束 -->
+	
+	<!-- 滚动盒子start -->
+	<div class="repairList">
+		<div id="scroll" class="mui-scroll-wrapper">
+			<div class="mui-scroll AllBox" id="viewDataBox">
+				<!-- 主内容 开始 -->
+				<div class="mui-content m-con">
+					<!-- 轮播开始 -->
+					<div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<!-- 支持循环，需要重复图片节点 -->
+							<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner.png" /></a></div>
+						</div>
+						<!-- 小圆点 -->
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					<!-- 轮播结束 -->
+			
+					<!-- 前端模块 开始 -->
+					<div class="mui-control-content mui-active m-content-web" id="html">
+						<!-- no.1 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									格式化
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon mui-icon-home iconfont icon-riqishijian"></span>
+										<div class="mui-media-body m-text">时间格式</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-zhengzeshi"></span>
+										<div class="mui-media-body m-text">正则</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.1 end -->
+			
+						<!-- no.2 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									存储
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-shuju"></span>
+										<div class="mui-media-body m-text">Local</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-baocundangqian"></span>
+										<div class="mui-media-body m-text">Session</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-zuzhiheguanlitubiao-"></span>
+										<div class="mui-media-body m-text">Cookie</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-SDCard"></span>
+										<div class="mui-media-body m-text">IndexDB</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.2 end -->
+							
+						<!-- no.3 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									Canvas
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon mui-icon-home iconfont icon-dianziqianmingx"></span>
+										<div class="mui-media-body m-text">电子签名</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.3 end -->
+						
+					</div>
+					<!-- 前端模块 结束 -->
+					
+					<!-- 安卓主内容 开始 -->
+					<div class="mui-control-content m-content-android" id="android">
+						<!-- no.1 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									App
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon mui-icon-home iconfont icon-chushihualiuchengshitu"></span>
+										<div class="mui-media-body m-text">初始化</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-xiaoxi"></span>
+										<div class="mui-media-body m-text">推送</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-neironggengxin"></span>
+										<div class="mui-media-body m-text">更新</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-icon_kaifazhebanbenfabuguanli"></span>
+										<div class="mui-media-body m-text">信息</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.1 end -->
+			
+						<!-- no.2 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									缓存
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-iconset0357"></span>
+										<div class="mui-media-body m-text">存取</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-paizhao1"></span>
+										<div class="mui-media-body m-text">拍照测试</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-qingchuhuancun"></span>
+										<div class="mui-media-body m-text">清除</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-lixianxiazai"></span>
+										<div class="mui-media-body m-text">离线</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.2 end -->
+							
+						<!-- no.3 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									相机
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-bhjscanqr"></span>
+										<div class="mui-media-body m-text">扫描</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-paizhao"></span>
+										<div class="mui-media-body m-text">拍照</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-luyinshuohuashengyin"></span>
+										<div class="mui-media-body m-text">录音</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-vcr"></span>
+										<div class="mui-media-body m-text">摄像</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.3 end -->
+							
+						<!-- no.4 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									上传
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-wendangshangchuan"></span>
+										<div class="mui-media-body m-text">文件</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-icons01"></span>
+										<div class="mui-media-body m-text">照片</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-shangchuan"></span>
+										<div class="mui-media-body m-text">音频</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-shipinshangchuan"></span>
+										<div class="mui-media-body m-text">视频</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.4 end -->
+						
+						<!-- no.5 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									调取
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-caifang-danweilianxirendianhua"></span>
+										<div class="mui-media-body m-text">联系人</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-dianhua"></span>
+										<div class="mui-media-body m-text">电话</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-duanxin"></span>
+										<div class="mui-media-body m-text">短信</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.5 end -->
+						
+						<!-- no.6 start -->
+						<div class="gongge-list">
+							<!-- 标题 -->
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									导航
+								</li>
+							</ul>
+							<!-- 九宫格开始 -->
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-daohang"></span>
+										<div class="mui-media-body m-text">导航</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-dingwei"></span>
+										<div class="mui-media-body m-text">定位</div>
+									</a>
+								</li>
+							</ul>
+							<!-- 九宫格结束 -->
+						</div>
+						<!-- no.6 end -->
+						
+					</div>
+					<!-- 安卓主内容 结束 -->
+					
+					<!-- 页面主内容 开始 -->
+					<div class="mui-control-content m-content-page" id="page">
+						页面主内容
+					</div>
+					<!-- 页面主内容 结束 -->
+					
+					<!-- 设置主内容 开始 -->
+					<div class="mui-control-content m-content-web" id="setting">
+						设置主内容
+					</div>
+					<!-- 设置主内容 结束 -->
+				</div>
+				<!-- 主内容 结束 -->
+			</div>
+		</div>
+	</div>
+	<!-- 滚动盒子end -->
+
+	<!-- footer开始 -->
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active footer" href="#html">
+			<span class="mui-icon iconfont icon-qianduanyingyongmoban"></span>
+			<span class="mui-tab-label">前端</span>
+		</a>
+		<a class="mui-tab-item" href="#android">
+			<span class="mui-icon iconfont icon-anzhuo1"></span>
+			<span class="mui-tab-label">安卓</span>
+		</a>
+		<a class="mui-tab-item" href="#page">
+			<span class="mui-icon iconfont icon-suoyou"></span>
+			<span class="mui-tab-label">页面</span>
+		</a>
+		<a class="mui-tab-item" href="#setting">
+			<span class="mui-icon iconfont icon-set"></span>
+			<span class="mui-tab-label">设置</span>
+		</a>
+	</nav>
+	<!-- footer结束 -->
+</body>
+<!-- jquery库 -->
+<script type="text/javascript" src="../../comstatic/minjs/jquery-1.10.2.min.js"></script>
+<!-- 标准 mui.js -->
+<script type="text/javascript" src="../../comstatic/minjs/mui.min.js"></script>
+<!-- Home js -->
+<script type="text/javascript" src="js/home.js"></script>
+</html>

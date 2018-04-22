@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>登录页</title>
+	<!--允许全屏-->
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no" name="format-detection">
+	<!--处理rem问题-->
+	<script type="text/javascript" src="common/js/remflex.js" ></script>
+	<!--标准mui.css-->
+	<link rel="stylesheet" href="common/css/mui.rem.css">
+	<!--阿里巴巴图标库-->
+	<link rel="stylesheet" href="common/iconfont/iconfont.css"/>
+	<!--首页的css-->
+	<link rel="stylesheet" href="common/css/login.css">
+</head>
+<body>
+<div class="mui-content">
+	<br />
+	<br />
+	<a href="./comview/home/home.html">home</a>
+	<br />
+	<br />
+	<a href="./view_html_example/format_time_html/format_time.html">time</a>
+	<div class="mui-content-img">
+		<img class="loginBG" src="common/images/login.png" />
+		<img class="loginPP" src="common/images/user_default.png" />
+	</div>
+	<div class="mui-input-group">
+		<div class="mui-input-row">
+			<label class="data-dpr-14">账号</label>
+			<input id='account' type="text" class="mui-input-clear mui-input data-dpr-14" placeholder="请输入账号">
+		</div>
+		<div class="mui-input-row">
+			<label class="data-dpr-14">密码</label>
+			<input id='password' type="password" class="mui-input-clear mui-input data-dpr-14" placeholder="请输入密码">
+		</div>
+	</div>
+	<div class="mui-content-padded">
+		<button id='login' class="mui-btn mui-btn-block mui-btn-primary data-dpr-14">登录</button>
+	</div>
+</div>
+<script type="text/javascript" src="common/js/jquery-1.10.2.min.js" ></script>
+<script type="text/javascript" src="common/js/mui.min.js" ></script>
+<script type="text/javascript" src="common/js/COMM.common.js" ></script>
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="static/shudian/js/AJAX.common.js" ></script>
+<script type="text/javascript">
+  /*
+	addEventListener() 方法用于向指定元素添加事件句柄。
+	语法：
+	element.addEventListener(event[必须。字符串，指定事件名。],
+	function[必须。指定要事件触发时执行的函数。], 
+	useCapture[可选。布尔值，指定事件是否在捕获或冒泡阶段执行。])
+	
+	------------------------------------------------------------
+	navigator.app.loadUrl()  加载 web 页面的应用程序中或者系统默认的浏览器中
+	navigator .app.cancelLoadUrl()  在 web 页面成功加载之前取消加载
+	navigator.app.backHistory()  返回上一次浏览页面
+	navigator.app.clearHistory()  清空浏览历史
+	navigator.app.clearCache()  清空程序的资源文件缓存
+	navigator.app.exitApp()           退出应用程序
+	
+*/      
+	if(window.android){ //判断android平台登录，初始化如下（if代码块）
+		document.addEventListener("deviceready", onDeviceReady, false);	
+		function onDeviceReady() {
+			navigator.app.clearHistory();	//清空浏览历史
+			AJAX.init();		//初始化ajax
+			displayUser();	//
+		}
+	}else{	//其他平台登录，初始化如下（else代码块）
+		AJAX.init();
+		displayUser()
+	}
+//	debugger;
+
+	function displayUser(){
+		var sessionKey = JSON.parse(sessionStorage.getItem("userSession"));	//保存并获取数据从userSession对象
+		
+		if(sessionKey){
+			$("#account").val(sessionKey.account);
+			$("#password").val(sessionKey.password);
+		}else if(window.android){
+			var param={};
+			param.account = "";
+			param.password = "";
+			extrainfo.callMethod("getOfflineCache",param,function(json){
+				if(json.success){
+					$("#account").val(json.result.account);
+					$("#password").val(json.result.password);
+				}else{
+					mui.alert("APP获取出错,请重新登录！")
+				}
+			});
+		}
+	}
+
+	$("#login").click(function(){
+		var para = {};
+			para.account = $("#account").val();
+			para.password = $("#password").val();
+			para.loginType = 0;
+		if(!para.account || !para.password){
+			mui.alert("账号或密码不能为空，请输入账号或密码！");
+			return;
+		}
+		
+		AJAX.apiMethod('userCenter/RztSysUser/userLogin','post',para,function(data){
+			if(data.success){
+				var locationInfo = data.data;
+				// 缓存
+				var params = {};
+					params = locationInfo;
+					params.account = $("#account").val();
+					params.password = $("#password").val();
+				COMM.sessionUser(params);
+				if(window.android){
+					// 定位
+			        var json = {};
+				        json.span = "60";  //定位间隔时间(s)
+				        json.intervaltime = 5*60*1000;  //定位守护启动时间
+			        	json.locationInfo = locationInfo;
+			        	json.uri = AJAX.baseUrl + "/userCenter/Cmcoordinate/addCmcoordinate";
+					extrainfo.callMethodNoBack("alwaysLocation", json);
+					// 缓存
+					extrainfo.callMethod("putOfflineCache",params,function(json){
+						if(json.success){
+							var params2 = {};
+								params2.uri = AJAX.baseUrl+"/warningmonitorServer/GJKH/KHXXx"
+								params2.currentUserId = locationInfo.ID;
+								params2.taskType = locationInfo.WORKTYPE;
+								params2.typeReason = 1;
+							params.outloging = params2;
+							extrainfo.callMethod("putOfflineCache",params,function(datas){
+								console.log(datas);
+							})
+							mui.alert("登录成功,跳转中...");
+							location.href = 'home.html';
+						}else{
+							mui.alert("账号或密码登录遇到错误，请重新登录或检查网络！");
+						}
+					});
+				}else{
+					console.log("登录成功,跳转中...")
+					location.href = 'home.html';
+				}
+			}else{
+				mui.alert("您输入的账号或密码有错，请重新输入！")
+			}
+		},function(err){
+			console.log(err.status);
+		});
+	})
+	
+var	AJAX = {};
+	/*获取当前页面地址栏参数*/
+AJAX.getLocaPara = function() {
+   var url = location.href;
+   var theRequest = new Object();
+   var index = url.indexOf("?");
+   if (index != -1) { 
+		var str = url.substr(index+1);
+		var idx = str.indexOf("&");
+		if(idx!=-1){
+			var strs = str.split("&");
+			for(var i = 0; i < strs.length; i ++) { 
+				theRequest[strs[i].split("=")[0]]=strs[i].split("=")[1];
+			}
+		}else{
+			theRequest[str.split("=")[0]]=str.split("=")[1];
+		}
+	}
+   return theRequest;
+};
+
+var str = AJAX.getLocaPara();
+console.log(str);
+
+</script>
+</body>
+</html>
+
+

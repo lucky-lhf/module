@@ -1,0 +1,28 @@
+/**********表单*********/
+.form.mui-input-group{
+	margin: 0 20px;
+}
+.mui-input-group:after,
+.form.mui-input-group:before,
+.form.mui-input-group .mui-input-row:after{
+	height: 0;
+}
+.form.mui-input-group .mui-input-row{
+	height: 35px;
+}
+.form .mui-input-row label{
+	width: 30%;
+	padding: 5px 0;
+	color: #8c8e91;
+	font-size: 15px;
+}
+.form .mui-input-row [type="text"]{
+	width: 70%;
+	color: #8c8e91;
+	font-size: 13px;
+	border: 1px solid #c8c7cc;
+	padding: 5px;
+	height: 26px;
+	border-radius: 3px;
+}
+

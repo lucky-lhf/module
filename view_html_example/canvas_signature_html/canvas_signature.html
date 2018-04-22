@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>电子签名</title>
+	<!--允许全屏--> 
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--标准mui.css-->
+	<link rel="stylesheet" href="../../comstatic/micss/mui.min.css">
+	<!--阿里巴巴图标库-->
+	<link rel="stylesheet" href="../../comstatic/iconfont/iconfont.css"/>
+	<!--公共 css-->
+	<link rel="stylesheet" href="../../comstatic/comcss/web_common.css"/>
+	<!--本页面 css-->
+	<link rel="stylesheet" href="css/canvas_signature.css">
+</head>
+<body>
+	<!-- header开始 -->
+	<header class="mui-bar mui-bar-nav m-header">
+		<a href="javascript:void(0)" id="goBack" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">电子签名</h1>
+	</header>
+	<!-- header结束 -->
+	
+	<!-- 滚动盒子start -->
+	<div class="repairList">
+		<div id="scroll" class="mui-scroll-wrapper">
+			<div class="mui-scroll AllBox" id="viewDataBox">
+				<!--主内容开始-->
+				<div class="mui-content m-content">
+					
+					<!--no.1 start-->
+					<div class="mui-content-padded">
+						<p>使用之前</p>
+						<ul class="des">
+							<li>
+								<p class="txt">首页引用：</p>
+								<strong>canvas.common.js</strong>
+							</li>
+						</ul>
+					</div>
+					<!--no.1 end-->
+					
+					<!--no.2 start-->
+					<div class="mui-content-padded">
+						<p>使用方法</p>
+						<ul class="des">
+							<li>
+								<p class="txt">语法：</p>
+								<strong>$().esign(签名的地方, 签名显示的地方, 点击关闭时, 点击确认时,弹出框,显示的宽度,显示的高度);</strong>
+								<!--代码美化 自定义盒子 开始-->
+								<div class="code_pretty">
+<!--代码美化 必须顶格写 开始-->								
+<pre class='hljs'><code><span class="hljs-variable">$(</span>).esign(<span class="hljs-string">"alertMsg"</span>, <span class="hljs-string">"imageData_show"</span>, <span class="hljs-string">"alertMsg-box-close"</span>, <span class="hljs-string">"alertMsg-box-sure"</span>,<span class="hljs-string">"alertMsg-box"</span>,<span class="hljs-number">100</span>,<span class="hljs-number">50</span>);</code></pre>
+<!--代码美化 必须顶格写 结束-->							
+								</div>
+								<!--代码美化 自定义盒子 结束-->
+							</li>
+							<li>
+								<p class="txt">把img的src的数据转换成二进制的对象：</p>
+								<!--代码美化 自定义盒子 开始-->
+								<div class="code_pretty">
+<!--代码美化 必须顶格写 开始-->
+<pre class='hljs'><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dataURItoBlob</span><span class="hljs-params">(base64Data)</span> </span>{
+    <span class="hljs-keyword">var</span> byteString;
+    <span class="hljs-keyword">if</span>(base64Data.split(<span class="hljs-string">','</span>)[<span class="hljs-number">0</span>].indexOf(<span class="hljs-string">'base64'</span>) &gt;= <span class="hljs-number">0</span>)
+        byteString = atob(base64Data.split(<span class="hljs-string">','</span>)[<span class="hljs-number">1</span>]);
+    <span class="hljs-keyword">else</span>
+        byteString = <span class="hljs-built_in">unescape</span>(base64Data.split(<span class="hljs-string">','</span>)[<span class="hljs-number">1</span>]);
+    <span class="hljs-keyword">var</span> mimeString = base64Data.split(<span class="hljs-string">','</span>)[<span class="hljs-number">0</span>].split(<span class="hljs-string">':'</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">';'</span>)[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">var</span> ia = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>(byteString.length);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Blob([ia], { type: mimeString });
+}
+			
+            
+        </code></pre>
+<!--代码美化 必须顶格写 结束-->
+        							</div>
+        							<!--代码美化 自定义盒子 结束-->
+							</li>
+						</ul>
+					</div>
+					<!--no.2 end-->
+					
+					<!--按钮 start-->
+					<div class="mui-button-row">
+						<button id="alertBtn" type="button" class="mui-btn mui-btn-outlined btn-color">
+							电子签名
+	    					</button>
+					</div>
+					<!--按钮 end-->
+					
+					<!--签名框 start-->
+					<div id="imageData_show"></div>
+					<!--签名框 end-->
+				</div>
+				<!--主内容结束-->
+			</div>
+		</div>
+	</div>
+	<!-- 滚动盒子end -->
+	
+	<!--弹框开始-->
+	<div class="alertBox">
+		<div id="alertMsg-box" class="mui-popover mui-table-view"> 
+		    <div class="glo_title">电子签名</div> 
+		    <div class="glo_content">
+			    <div class="glo_con">
+			        <label class="title-title">检测人电子签名:</label>
+			        <canvas width="520" height="250" id="alertMsg"></canvas>
+		        </div>
+		    </div> 
+		    <div id="alertMsg-box-close" class="glo_result info_confirm">关闭</div>
+		    <div id="alertMsg-box-sure" class="glo_result">确认</div>
+		</div>
+	</div>
+	<!--弹框结束-->
+	
+	<!-- jquery库 -->
+	<script src="../../comstatic/minjs/jquery-1.10.2.min.js"></script>
+	<!-- 标准 mui.js -->
+	<script src="../../comstatic/minjs/mui.min.js"></script>
+	<!--canvas-->
+	<script src="./js/canvas.common.js"></script>
+	<!--滚动盒子-->
+	<script src="../../comstatic/comjs/common.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#alertBtn').click(function(){
+				$('#alertMsg-box').addClass("mui-active");
+				popover_pos('#alertMsg-box');
+			})
+			// 位置计算
+			function popover_pos(objId) {
+				var x_width = (window.innerWidth - 280) / 2;
+				var x_height = (window.innerHeight - 328) / 2;
+				$(objId).css({
+					left: x_width,
+					top: x_height
+				})
+			 }
+		    //初始化动作，根据DOM的ID不同进行自定义，如果不写则内部默认取这四个
+		    //$().esign(签名的地方, 签名显示的地方, 点击关闭时, 点击确认时,弹出框,显示的宽度,显示的高度);
+		    $().esign("alertMsg", "imageData_show", "alertMsg-box-close", "alertMsg-box-sure","alertMsg-box",250,150);
+		});
+	</script>
+</body>
+</html>

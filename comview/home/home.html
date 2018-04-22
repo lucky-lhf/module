@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+	<!--允许全屏--> 
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--标准mui.css-->
+	<link rel="stylesheet" href="../../comstatic/micss/mui.min.css">
+	<!--阿里巴巴图标库-->
+	<link rel="stylesheet" href="../../comstatic/iconfont/iconfont.css"/>
+	<!--Home页的css-->
+	<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<!-- header开始 -->
+	<header class="mui-bar mui-bar-nav m-nav">
+		<h1 class="mui-title">前端及安卓常用的功能模块封装</h1>
+		<a class="mui-icon mui-icon-bars mui-pull-right"></a>
+	</header>
+	<!-- header结束 -->
+	
+	<!-- 滚动盒子start -->
+	<div class="repairList">
+		<div id="scroll" class="mui-scroll-wrapper">
+			<div class="mui-scroll AllBox" id="viewDataBox">
+				<!-- 主内容 开始 -->
+				<div class="mui-content m-con">
+					<!-- 轮播开始 -->
+					<div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="./images/banner.png" /></a></div>
+							<!-- 支持循环，需要重复图片节点 -->
+							<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner.png" /></a></div>
+						</div>
+						<!-- 小圆点 -->
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
+					</div>
+					<!-- 轮播结束 -->
+			
+					<!-- 前端模块 开始 -->
+					<div class="mui-control-content m-content-web mui-active" id="html"></div>
+					<!-- 前端模块 结束 -->
+					
+					<!-- 安卓主内容 结束 -->
+					<div class="mui-control-content m-content-web" id="anzhuo"></div>
+					<!-- 安卓主内容 结束 -->
+					
+					<!-- 页面主内容 结束 -->
+					<div class="mui-control-content m-content-web" id="page">
+						页面主内容
+					</div>
+					<!-- 页面主内容 结束 -->
+					
+					<!-- 设置主内容 结束 -->
+					<div class="mui-control-content m-content-web" id="setting">
+						设置主内容
+					</div>
+					<!-- 设置主内容 结束 -->
+				</div>
+				<!-- 主内容 结束 -->
+			</div>
+		</div>
+	</div>
+	<!-- 滚动盒子end -->
+
+	<!-- footer开始 -->
+	<nav class="mui-bar mui-bar-tab" id="footer">
+		<a class="mui-tab-item">
+			<span class="mui-icon iconfont icon-qianduanyingyongmoban"></span>
+			<span class="mui-tab-label">前端</span>
+		</a>
+		<a class="mui-tab-item">
+			<span class="mui-icon iconfont icon-anzhuo1"></span>
+			<span class="mui-tab-label">安卓</span>
+		</a>
+		<a class="mui-tab-item">
+			<span class="mui-icon iconfont icon-suoyou"></span>
+			<span class="mui-tab-label">页面</span>
+		</a>
+		<a class="mui-tab-item">
+			<span class="mui-icon iconfont icon-set"></span>
+			<span class="mui-tab-label">设置</span>
+		</a>
+	</nav>
+	<!-- footer结束 -->
+</body>
+<!-- jquery库 -->
+<script type="text/javascript" src="../../comstatic/minjs/jquery-1.10.2.min.js"></script>
+<!-- 标准 mui.js -->
+<script type="text/javascript" src="../../comstatic/minjs/mui.min.js"></script>
+<!--滚动盒子-->
+<script src="../../comstatic/comjs/common.js"></script>
+<!-- 接口请求 -->
+<script type="text/javascript" src="../../comstatic/comjs/ajax.common.js"></script>
+<!-- Home js -->
+<script type="text/javascript" src="js/home.js"></script>
+</html>

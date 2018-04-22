@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>时间的格式化</title>
+	<!--允许全屏--> 
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--标准mui.css-->
+	<link rel="stylesheet" href="../../comstatic/micss/mui.min.css">
+	<!--阿里巴巴图标库-->
+	<link rel="stylesheet" href="../../comstatic/iconfont/iconfont.css"/>
+	<!--公共 css-->
+	<link rel="stylesheet" href="../../comstatic/comcss/web_common.css"/>
+	<!--本页面 css-->
+	<link rel="stylesheet" href="css/format_time.css">
+</head>
+<body>
+	<!-- header开始 -->
+	<header class="mui-bar mui-bar-nav m-header">
+		<a href="javascript:void(0)" id="goBack" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">时间的格式化</h1>
+	</header>
+	<!-- header结束 -->
+	
+	<!-- 滚动盒子start -->
+	<div class="repairList">
+		<div id="scroll" class="mui-scroll-wrapper">
+			<div class="mui-scroll AllBox" id="viewDataBox">
+				<!--主内容开始-->
+				<div class="mui-content m-content">
+					
+					<!--no.1 start-->
+					<div class="mui-content-padded">
+						<p>使用之前</p>
+						<ul class="des">
+							<li>
+								<p class="txt">后台返回的必须是时间戳,这里引用了：</p>
+								<strong>commonJs里的dateCommon.js</strong>
+							</li>
+							<li>
+								<p class="txt">两种格式按要求来写</p>
+							</li>
+						</ul>
+					</div>
+					<!--no.1 end-->
+					
+					<!--no.2 start-->
+					<div class="mui-content-padded border">
+						<p>使用方法</p>
+	            			<ul class="des">
+							<li>
+								<p class="txt">第一种使用方法：</p>
+								<!--代码美化 自定义盒子 开始-->
+								<div class="code_pretty">
+<!--代码美化 必须顶格写 开始-->
+<pre class='hljs'><code>(new <span class="hljs-function"><span class="hljs-title">Date</span><span class="hljs-params">()</span></span>).<span class="hljs-function"><span class="hljs-title">Format</span><span class="hljs-params">(<span class="hljs-string">"yyyy-MM-dd hh:mm:ss"</span>)</span></span></code></pre>
+<!--代码美化 必须顶格写 结束-->
+								</div>
+								<!--代码美化 自定义盒子 结束-->
+							</li>
+						</ul>
+						<p class="t3">支持以下时间格式：</p>
+						<ul class="hm-description">
+							<li class="data1">2018-04-16 18:33:42</li>
+							<li class="data1">2018年04月16日 18时33分42秒</li>
+							<li class="data1">2018.04.16 18:33:42</li>
+						</ul>
+					</div>
+					<!--no.2 end-->
+					
+					<!--no.3 start-->
+					<div class="mui-content-padded border">
+						<ul class="des">
+							<li>
+								<p class="txt">第二种使用方法：</p>
+								<!--代码美化 自定义盒子 开始-->
+								<div class="code_pretty">
+<!--代码美化 必须顶格写 开始-->
+<pre class='hljs'><code><span class="hljs-function"><span class="hljs-title">FormatDate</span><span class="hljs-params">(new Date()</span></span>,<span class="hljs-string">"yyyy-MM-dd hh:mm:ss"</span>)</code></pre>
+<!--代码美化 必须顶格写 结束-->
+								</div>
+								<!--代码美化 自定义盒子 结束-->
+							</li>
+						</ul>
+						<p class="t3">支持以下时间格式：</p>
+						<ul class="hm-description">
+							<li>2018-04-16 18:33:42</li>
+							<li>2018年04月16日 18时33分42秒</li>
+							<li>2018.04.16 18:33:42</li>
+						</ul>
+					</div>
+					<!--no.3 end-->
+					
+					<!--no.4 start-->
+					<div class="mui-content-padded border">
+						<ul class="des">
+							<li>
+								<p class="txt">第三种使用方法：</p>
+								<!--代码美化 自定义盒子 开始-->
+								<div class="code_pretty">
+<!--代码美化 必须顶格写 开始-->
+<pre class='hljs'><code><span class="hljs-function"><span class="hljs-title">ForgitDate</span><span class="hljs-params">(new Date()</span></span>)</code></pre>
+<!--代码美化 必须顶格写 结束-->
+								</div>
+								<!--代码美化 自定义盒子 结束-->
+							</li>
+						</ul>
+						<p class="t3">支持以下时间格式：</p>
+						<ul class="hm-description">
+							<li>1510369871000</li>
+							<li>1513051932000</li>
+							<li>1487773342000</li>
+						</ul>
+					</div>
+					<!--no.4 end-->
+				</div>
+				<!--主内容结束-->
+			</div>
+		</div>
+	</div>
+	<!-- 滚动盒子end -->
+	
+	<!-- jquery库 -->
+	<script src="../../comstatic/minjs/jquery-1.10.2.min.js"></script>
+	<!-- 标准 mui.js -->
+	<script src="../../comstatic/minjs/mui.min.js"></script>
+	<!--时间格式-->
+	<script src="./js/data.common.js"></script>
+	<!--滚动盒子-->
+	<script src="../../comstatic/comjs/common.js"></script>
+</body>
+</html>
+<script>
+	$(".data1").eq(index).html((new Date()).Format("yyyy-MM-dd hh:mm:ss"));
+	$(".data1").eq(1).html((new Date()).Format("yyyy年MM月dd日 hh时mm分ss秒"));
+	$(".data1").eq(2).html((new Date()).Format("yyyy.MM.dd hh:mm:ss"));
+	
+	$(".data2").eq(0).html(FormatDate(new Date(),"yyyy-MM-dd hh:mm:ss"));
+	$(".data2").eq(1).html(FormatDate(new Date(),"yyyy年MM月dd日 hh时mm分ss秒"));
+	$(".data2").eq(2).html(FormatDate(new Date(),"yyyy.MM.dd hh:mm:ss"));
+	
+	$(".data3").eq(0).html(ForgetDate('2017-11-11 11:11:11'));
+	$(".data3").eq(1).html(ForgetDate('2017-12-12 12:12:12'));
+	$(".data3").eq(2).html(ForgetDate('2017-02-22 22:22:22'));
+</script>

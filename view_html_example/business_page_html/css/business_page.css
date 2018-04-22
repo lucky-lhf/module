@@ -1,0 +1,11 @@
+/*******分页*******/
+.page .mui-pagination-lg{
+	margin: 10px 35px 0 35px;
+}
+.page .mui-pagination-lg>li>a,
+.page .mui-pagination-lg>li>span{
+	font-size: 14px;
+	padding: 5px 10px;
+	width: auto!important;
+}
+
